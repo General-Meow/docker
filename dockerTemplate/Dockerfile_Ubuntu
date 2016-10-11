@@ -1,0 +1,8 @@
+FROM ubuntu:14.04
+MAINTAINER Paul Hoang 2016-06-26
+RUN ["apt-get", "update", "-y"]
+RUN ["apt-get", "upgrade", "-y"]
+
+#
+# Custom stuff here
+#

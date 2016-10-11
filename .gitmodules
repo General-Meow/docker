@@ -1,0 +1,6 @@
+[submodule "jarRunnerUbuntu"]
+	path = jarRunnerUbuntu
+	url = git@github.com:General-Meow/jarRunnerUbuntu.git
+[submodule "mybind9"]
+	path = mybind9
+	url = git@github.com:General-Meow/mybind9.git

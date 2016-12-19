@@ -80,7 +80,8 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - Getting details about a container can be done using: 'sudo docker inspect \<NAME>'
 - docker stores images, containers and container configuration under the /var/lib/docker directory
 - To delete containers use the following command: 'docker rm \<ID>'. The container must not be running to delete it.
-
+- docker run -h \<HOSTNAME\> runs a container and sets the hostname of the contain to \<HOSTNAME\> 
+- docker -e "\<ENV\>=\<VALUE\>" set environment variables to be used within the docker file
 
 ## Docker Images and Containers
 
@@ -236,5 +237,5 @@ WORKDIR /opt/apache2/www/html
 	- Registry API
 	- Docker Hub API
 	- Docker Remote API 
-
+ 
 

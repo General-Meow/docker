@@ -46,7 +46,9 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker build .									- build the docker file in the current directory and give the image the latest tag
 - docker build -t="\<USERNAME>/\<IMAGENAME>:\<VERISON>" .	- build the docker image from the current directory and give it a tag
 - docker history \<ID>								- look at each layer of the image to see how it was built
-
+- docker-compose up						- use the current directories docker-compose.yml file to start up containers defined in the file
+- docker-compose up -d						- run in detach mode
+- docker-compose down						- stop all the containers
 
 ## Installation
 - On a modern linux machine you don't need much. For latest Ubunutu, you could get away with configuring the repo then 'sudo apt-get install lxc-docker'

@@ -49,6 +49,7 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker-compose up						- use the current directories docker-compose.yml file to start up containers defined in the file
 - docker-compose up -d						- run in detach mode
 - docker-compose down						- stop all the containers
+- docker-compose -f \<FILENAME\>				- docker compose with a defined file
 
 ## Installation
 - On a modern linux machine you don't need much. For latest Ubunutu, you could get away with configuring the repo then 'sudo apt-get install lxc-docker'

@@ -46,7 +46,10 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker build .									- build the docker file in the current directory and give the image the latest tag
 - docker build -t="\<USERNAME>/\<IMAGENAME>:\<VERISON>" .	- build the docker image from the current directory and give it a tag
 - docker history \<ID>								- look at each layer of the image to see how it was built
-
+- docker-compose up						- use the current directories docker-compose.yml file to start up containers defined in the file
+- docker-compose up -d						- run in detach mode
+- docker-compose down						- stop all the containers
+- docker-compose -f \<FILENAME\>				- docker compose with a defined file
 
 ## Installation
 - On a modern linux machine you don't need much. For latest Ubunutu, you could get away with configuring the repo then 'sudo apt-get install lxc-docker'
@@ -80,7 +83,8 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - Getting details about a container can be done using: 'sudo docker inspect \<NAME>'
 - docker stores images, containers and container configuration under the /var/lib/docker directory
 - To delete containers use the following command: 'docker rm \<ID>'. The container must not be running to delete it.
-
+- docker run -h \<HOSTNAME\> runs a container and sets the hostname of the contain to \<HOSTNAME\> 
+- docker -e "\<ENV\>=\<VALUE\>" set environment variables to be used within the docker file
 
 ## Docker Images and Containers
 
@@ -236,5 +240,5 @@ WORKDIR /opt/apache2/www/html
 	- Registry API
 	- Docker Hub API
 	- Docker Remote API 
-
+ 
 

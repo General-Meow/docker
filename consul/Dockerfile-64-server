@@ -1,0 +1,22 @@
+# Run this with docker run -d --name consul -p 53:53 -p 53:53/udp generalmeow/consul-server-64
+FROM ubuntu:16.04
+MAINTAINER Paul Hoang 2016-12-13
+RUN ["apt-get", "update", "-y"]
+RUN ["apt-get", "install", "-y", "--no-install-recommends", "apt-utils"]
+RUN ["apt-get", "upgrade", "-y"]
+
+#create required directories
+CMD ["mkdir", "-p", "/opt/consul"]
+
+#add binaries
+ADD ./64bit/consul /opt/consul
+
+#expose the data directory for the host to access and expose required ports
+VOLUME /opt/consul/data
+EXPOSE 53
+EXPOSE 8400
+EXPOSE 8500
+EXPOSE 8600
+
+#run it!
+ENTRYPOINT ["/opt/consul/bin/consul", "agent", "-dev", "-data-dir=/opt/consul/data", "-config-dir=/opt/consul/config", "-client=0.0.0.0"]

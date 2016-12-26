@@ -46,10 +46,22 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker build .									- build the docker file in the current directory and give the image the latest tag
 - docker build -t="\<USERNAME>/\<IMAGENAME>:\<VERISON>" .	- build the docker image from the current directory and give it a tag
 - docker history \<ID>								- look at each layer of the image to see how it was built
-- docker-compose up						- use the current directories docker-compose.yml file to start up containers defined in the file
-- docker-compose up -d						- run in detach mode
-- docker-compose down						- stop all the containers
-- docker-compose -f \<FILENAME\>				- docker compose with a defined file
+- docker-compose up									- use the current directories docker-compose.yml file to start up containers defined in the file
+- docker-compose up -d								- run in detach mode
+- docker-compose down								- stop all the containers
+- docker-compose -f \<FILENAME\> up/down			- docker compose with a defined file
+- docker swarm init --advertise-addr <MANAGER-IP>	- start a swarm with the defined ip as the manager
+- docker swarm join-token worker 					- generate the token for a worker to join the swarm
+- docker swarm join --token  <TOCKEN> <IP:PORT>    	- join the swarm
+- docker swarm leave \<NODE\>						- remove a worker node from the swarm
+- docker info 										- get the general state of the swarm
+- docker node ls 									- list all nodes in a docker swarm
+- docker node ps \<NODE-NAME\>						- list running containers on a specific node
+- docker node inpect \<NODE-NAME\>					- print out node information
+- docker node promote/demote \<NODE-NAME\>			- promote or demote a node to/from manager
+- docker node remove \<NODE-NAME\>					- remove a node from a swarm
+- docker service create --replicas <NO> --name <NAME> <IMAGE> 	- create a service from the manager and allow the manager to choose where to deploy the image
+- docker service ps <NAME>							- looks for all services with name in the swarm
 
 ## Installation
 - On a modern linux machine you don't need much. For latest Ubunutu, you could get away with configuring the repo then 'sudo apt-get install lxc-docker'
@@ -241,4 +253,6 @@ WORKDIR /opt/apache2/www/html
 	- Docker Hub API
 	- Docker Remote API 
  
+ ## Docker swarm
+
 

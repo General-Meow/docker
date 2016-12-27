@@ -26,7 +26,7 @@ if [ "x$KAFKA_LOG4J_OPTS" = "x" ]; then
 fi
 
 if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
-    export KAFKA_HEAP_OPTS="-Xmx512M -Xms512M"
+    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
 fi
 
 EXTRA_ARGS=${EXTRA_ARGS-'-name zookeeper -loggc'}

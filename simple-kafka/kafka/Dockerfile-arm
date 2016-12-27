@@ -1,5 +1,5 @@
 # run: docker build -t generalmeow/kafka:<TAG>
-# run: docker run -d -p 9092:9092 --name kafka --link zookeeper:zookeeper generalmeow/kafka
+# run: docker run -d -p 9092:9092 --name kafka --link zookeeper:zookeeper -e KAFKA_HEAP_OPTS=''-Xmx512M -Xms512M' generalmeow/kafka:1.0-arm
 FROM larmog/armhf-alpine-java:jdk-8u73
 MAINTAINER Paul Hoang 2016-12-26
 RUN ["mkdir", "-p", "/home/kafka"]

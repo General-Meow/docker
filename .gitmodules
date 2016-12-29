@@ -5,5 +5,5 @@
 	path = mybind9
 	url = git@github.com:General-Meow/mybind9.git
 [submodule "influxdb"]
-        path = influxdb
-        url = git@github.com:General-Meow/influxdb.git
+	path = influxdb
+	url = git@github.com:General-Meow/influxdb.git

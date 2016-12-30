@@ -1,4 +1,4 @@
-# run: docker build -t generalmeow/kafka:<TAG>
+# run: docker build -f Dockerfile-kafka -t generalmeow/kafka:<TAG> .
 # run: docker run -d -p 9092:9092 --name kafka --link zookeeper:zookeeper generalmeow/kafka
 FROM anapsix/alpine-java:8
 MAINTAINER Paul Hoang 2016-12-26

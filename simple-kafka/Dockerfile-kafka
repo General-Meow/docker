@@ -1,0 +1,10 @@
+# run: docker build -t generalmeow/kafka:<TAG>
+# run: docker run -d -p 9092:9092 --name kafka --link zookeeper:zookeeper generalmeow/kafka
+FROM anapsix/alpine-java:8
+MAINTAINER Paul Hoang 2016-12-26
+RUN ["mkdir", "-p", "/home/kafka"]
+ADD ./kafka_2.11-0.10.1.0.tgz /home/kafka
+COPY ["./dockerConfig", "/home/kafka/dockerConfig"]
+WORKDIR /home/kafka
+EXPOSE 9092
+ENTRYPOINT ["/home/kafka/kafka_2.11-0.10.1.0/bin/kafka-server-start.sh", "/home/kafka/dockerConfig/server.properties"]

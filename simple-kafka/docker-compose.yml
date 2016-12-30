@@ -3,12 +3,12 @@ version: "2"
 services:
   zookeeper:
     container_name: "zookeeper"
-    image: "generalmeow/kafkazookeeper:1.0"
+    image: "generalmeow/kafkazookeeper:1.1"
     ports:
       - "2181:2181"
   kafka:
     container_name: "kafka"
-    image: "generalmeow/kafka:1.0"
+    image: "generalmeow/kafka:1.1"
     ports:
       - "9092:9092"
     links:

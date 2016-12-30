@@ -1,0 +1,10 @@
+# run: docker build -f Dockerfile-zookeeper-arm -t generalmeow/kafkazookeeper:<TAG>
+# run: docker run -d -p 2181:2181 --name zookeeper generalmeow/kafkazookeeper:<TAG>
+FROM larmog/armhf-alpine-java:jdk-8u73
+MAINTAINER Paul Hoang 2016-12-26
+RUN ["mkdir", "-p", "/home/zookeeper"]
+ADD ./kafka_2.11-0.10.1.0.tgz /home/zookeeper
+COPY ["./dockerConfig", "/home/zookeeper/dockerConfig"]
+WORKDIR /home/zookeeper
+EXPOSE 2181
+ENTRYPOINT ["/home/zookeeper/kafka_2.11-0.10.1.0/bin/zookeeper-server-start.sh", "/home/zookeeper/dockerConfig/zookeeper.properties"]

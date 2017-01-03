@@ -11,13 +11,14 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker-machine ip     							- get ip address of the server (different depending if your running in windows/mac or linux)
 - docker-machine status 							- check if docker is running
 - docker-machine ls 								- get a list of all docker machines
-- docker machine create --driver virtualbox \<NAME> - create a new docker machine using the virtualbox driver with the provided name
-- eval "$(docker-machine env <NAME>)" 				- setup the current consule to use the docker machine provided by NAME
+- docker machine create --driver virtualbox \<NAME\> - create a new docker machine using the virtualbox driver with the provided name
+- eval "$(docker-machine env \<NAME\>)" 				- setup the current consule to use the docker machine provided by NAME
 - docker ps -a 										- show all containers including ones that have stopped (-l option will show the last container) - it will also show network and port mapping information
+- docker exec -ti \<NAME> /bin/bash			- get a command prompt up for an already running container
 - docker run -i -t \<IMAGE>:\<TAG> \<COMMAND> 		- create and start a new container in interactive mode based off the ubuntu image 
 - docker run --name \<NAME> ...						- create and start a new container with a certain name (needs to be unique)
 - docker run --name \<NAME> -d 						- create and start in daemon mode (best for services and long running processes) - for background tasks. STDOUT doesnt goto terminal
-- docker run -p \<PORT> ...							- run a container and map the exposed port in the container to a port defined <PORT>. if no port is provided at run then one is randomly selected between 49000- 49900
+- docker run -p \<PORT> ...							- run a container and map the exposed port in the container to a port defined \<PORT\>. if no port is provided at run then one is randomly selected between 49000- 49900
 - docker run -p \<LOCAL-PORT>:\<CONTAINER-PORT>		- run container and map a local port to the containers exposed port ie. -p 8080:80
 - docker run -P ...									- expose all container ports and local ports
 - docker run -v \<HOST_DIR>:\<CONTAINER_DIR>		- run the conatiner and mount a local directory to a directory in the container
@@ -50,9 +51,9 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker-compose up -d								- run in detach mode
 - docker-compose down								- stop all the containers
 - docker-compose -f \<FILENAME\> up/down			- docker compose with a defined file
-- docker swarm init --advertise-addr <MANAGER-IP>	- start a swarm with the defined ip as the manager
+- docker swarm init --advertise-addr \<MANAGER-IP>	- start a swarm with the defined ip as the manager
 - docker swarm join-token worker 					- generate the token for a worker to join the swarm
-- docker swarm join --token  <TOCKEN> <IP:PORT>    	- join the swarm
+- docker swarm join --token  \<TOCKEN> \<IP:PORT>    	- join the swarm
 - docker swarm leave \<NODE\>						- remove a worker node from the swarm
 - docker info 										- get the general state of the swarm
 - docker node ls 									- list all nodes in a docker swarm
@@ -60,8 +61,8 @@ Shipyard, DockerUI, maDocker - UI's for docker
 - docker node inpect \<NODE-NAME\>					- print out node information
 - docker node promote/demote \<NODE-NAME\>			- promote or demote a node to/from manager
 - docker node remove \<NODE-NAME\>					- remove a node from a swarm
-- docker service create --replicas <NO> --name <NAME> <IMAGE> 	- create a service from the manager and allow the manager to choose where to deploy the image
-- docker service ps <NAME>							- looks for all services with name in the swarm
+- docker service create --replicas \<NO> --name \<NAME> \<IMAGE> 	- create a service from the manager and allow the manager to choose where to deploy the image
+- docker service ps \<NAME>							- looks for all services with name in the swarm
 
 ## Installation
 - On a modern linux machine you don't need much. For latest Ubunutu, you could get away with configuring the repo then 'sudo apt-get install lxc-docker'

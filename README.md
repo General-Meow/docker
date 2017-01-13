@@ -7,6 +7,7 @@ Shipyard, DockerUI, maDocker - UI's for docker
 ## Docker commands:
 - docker help							
 - docker info                                       - get info from the server about current images and containers on the system
+- docker cp \<HOST_FILE> \<CONTAINER>:\<CONTAINER_LOCATION> 		   	- Copy a file from the local host to a container
 - docker-machine 						            - tool to manage the virtual machine on mac osx. MUST NOT BE RUN AS SUDO
 - docker-machine ip     							- get ip address of the server (different depending if your running in windows/mac or linux)
 - docker-machine status 							- check if docker is running
